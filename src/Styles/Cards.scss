@@ -1,0 +1,83 @@
+.right-box {
+  background-color: $white;
+  font-family: $primary;
+  font-size: 1.3em;
+  height: 100%;
+  margin-top: 8em;
+  padding: .8em;
+  text-align: center;
+  width: 50%;
+}
+
+.right-box-cards-container {
+  border-radius: .5em;
+  border: .1em solid $gray;
+  height: 12em;
+  margin-left: .4em;
+  margin-top: 1.9em;
+  width: 27.5em;
+}
+
+.question {
+  margin-top: 1.5em;
+}
+
+.right-controls {
+  margin-top: 2.5em;
+}
+
+.card-input {
+  border: 1px solid $gray;
+  border-right: none;
+  border-radius: .5em 0 0 .5em;
+  font-size: .6em;
+  height: 3em;
+  padding-left: .7em;
+  margin-top: 2px;
+  vertical-align: bottom;
+  width: 15em;
+}
+
+.submit-answer {
+  border: 1px solid $gray;
+  border-radius: 0 .5em .5em 0;
+  border-left: none;
+  background-color: $lavender;
+  cursor: pointer;
+  font-family: $primary;
+  height: 3.4em;
+  letter-spacing: .1em;
+  width: 8em;
+  &:hover {
+    color: $white;
+    background-color: hsla(263, 44%, 48%, 1);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1em;
+}
+
+.type-text {
+  font-size: .9em;
+  margin-left: 1em;
+  margin-top: 4em;
+  text-align: left;
+}
+
+.learn-more {
+  border: none;
+  border-radius: .5em;
+  color: $main-color;
+  cursor: pointer;
+  font-family: $primary;
+  font-size: .7em;
+  height: 3.4em;
+  letter-spacing: .1em;
+  margin-right: 2em;
+  margin-top: 6em;
+  width: 8em;
+}

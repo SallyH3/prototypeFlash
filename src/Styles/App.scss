@@ -1,0 +1,18 @@
+@import 'Mixins';
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-weight: lighter;
+}
+
+.app {
+  display: flex;
+}
+
+body {
+  background-color: $lavender;
+  color: $main-color;
+}
+
+
