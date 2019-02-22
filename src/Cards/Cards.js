@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from '../Card/Card.js';
+// import Data from './Data.js';
 
-const Cards = () => {
+const Cards = (props) => {
   return  (
     <section className='right-box'>
       <section className='right-box-cards-container'>
@@ -15,7 +16,7 @@ const Cards = () => {
         </article>
         <footer className='footer-container'>
           <p className='type-text'>Type:
-          {/* {props.type} */}
+          {props.type}
           </p>
           <p className="learn-more">
           {/* <a
