@@ -1,0 +1,49 @@
+.left-box {
+  background-color: $white;
+  font-family: $primary;
+  font-size: 1.3em;
+  height: 100%;
+  margin-top: 8em;
+  padding: .8em;
+  text-align: center;
+  width: 50%;
+}
+
+.left-title {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.6em;
+}
+
+.button {
+  background-color: $lavender;
+  border: 1px solid $gray;
+  cursor: pointer;
+  border-radius: .5em;
+  font-family: $primary;
+  font-size: .8em;
+  height: 3.4em;
+  letter-spacing: .1em;
+  margin: 10px;
+  padding: 5px;
+  width: 10em;
+  &:hover {
+    color: $white;
+    background-color: hsla(263, 44%, 48%, 1);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.need-to-study-text {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+.study-list-text {
+  text-decoration: underline;
+}

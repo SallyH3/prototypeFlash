@@ -1,0 +1,26 @@
+header {
+  background-color: $white;
+  height: 10em;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  font-family: $primary;
+  font-size: 4em;
+  margin-bottom: .2em;
+  margin-top: 0em;
+  padding-top: .3em;
+  text-align: center;
+}
+
+.subtitle {
+font-family: $primary;
+font-size: 1.4em;
+margin-top: .3em;
+text-align: center;
+}
