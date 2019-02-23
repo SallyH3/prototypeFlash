@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header>
+  <p
+    className="title"
+  >
+    prototypeFlash
+  </p>
+  <p
+    className="subtitle"
+  >
+    A flashcard app for users to study prototype methods
+  </p>
+</header>
+`;

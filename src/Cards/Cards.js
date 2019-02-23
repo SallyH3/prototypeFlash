@@ -7,7 +7,7 @@ const Cards = (props) => {
     <section className='right-box'>
       <section className='right-box-cards-container'>
       <article className='question'>
-      {/* {props.question} */}
+      {/* {props.cards.question} */}
       "Copies a sequence of array elements within the array."
       </article>
       <article className='right-controls'>
