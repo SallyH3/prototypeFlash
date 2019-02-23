@@ -6,13 +6,16 @@ import Cards from '../Cards/Cards.js';
 import Data from '../Data.js';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state={
       mutators: [],
       iterations: [],
       accessors: [],
-      currentSelection: ''
+      currentSelection: '',
+      getLink: Data.map(method => {
+        return method.link;
+      })
     }
   }
 
@@ -50,6 +53,7 @@ getAccessorMethods = () => {
         accessor={this.getAccessorMethods}
         />
         <Cards cards={currentClick}
+        link={this.state.getLink}
         randomNum={randomNum}
         />
       </section>

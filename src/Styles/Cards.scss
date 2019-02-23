@@ -42,6 +42,9 @@
   width: 15em;
 }
 
+//gets rid of blue outline around input
+.card-input:focus {outline:0;}
+
 //submit answer button - this displays on right side after click
 .submit-answer {
   border: 1px solid $gray;
