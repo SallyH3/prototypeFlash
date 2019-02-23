@@ -1,9 +1,46 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const Data = [
+  { 
+  "title": "Mutator methods",
+  "type": "mutator",
+  "correct": false,
+  "question": "Copies a sequence of array elements within the array.",
+  "answer": ".copyWithin()",
+  "id": 1,
+  "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"
+  },
+  { 
+    "title": "Mutator methods",
+    "type": "mutator",
+    "correct": false,
+    "question": "Fills all the elements of an array from a start index to an end index with a static value.",
+    "answer": ".fill()",
+    "id": 2,
+    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"
+    }
+]
+
+describe('App', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow (
+      <App />
+    )
+  });
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should have default states', () => {
+  expect(wrapper.state()).toEqual({
+    mutators: [],
+    iterations: [],
+    accessors: [],
+    currentSelection: '',
+    getLink: Data.method.link
+  });
 });
