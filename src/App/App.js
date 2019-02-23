@@ -17,27 +17,14 @@ export default class App extends Component {
   }
 
 getMutatorMethods = () => {
-  // let filteredMutator = Data.filter((method) => {
-  //   return method.title === 'Mutator methods'
-  // })
-  // console.log(filteredMutator)
-  // this.setState({mutators: filteredMutator})
   this.setState({currentSelection: 'Mutator methods'})
 }
 
 getIterationMethods = () => {
-  // let filteredIteration = Data.filter((method) => {
-  //   return method.title === 'Iteration methods'
-  // })
-  // this.setState({iterations: filteredIteration})
   this.setState({currentSelection: 'Iteration methods'})
 }
 
 getAccessorMethods = () => {
-  // let filteredAccessors = Data.filter((method) => {
-  //   return method.title === 'Accessor methods'
-  // })
-  // this.setState({accessors: filteredAccessors})
   this.setState({currentSelection: 'Accessor methods'})
 }
   
@@ -50,9 +37,10 @@ getAccessorMethods = () => {
 // }
 
   render() {
-    let current = Data.filter((method) => {
+    let currentClick = Data.filter((method) => {
       return method.title === this.state.currentSelection;
     })
+    let randomNum = Math.floor(Math.random() * Math.floor(currentClick.length - 1));
     return (
       <section className='app'>
         <Header />
@@ -61,7 +49,8 @@ getAccessorMethods = () => {
         iteration={this.getIterationMethods}
         accessor={this.getAccessorMethods}
         />
-        <Cards cards={current}
+        <Cards cards={currentClick}
+        randomNum={randomNum}
         />
       </section>
     );
