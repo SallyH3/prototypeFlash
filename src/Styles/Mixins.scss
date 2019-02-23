@@ -17,14 +17,14 @@ $bluePurple: hsla(238, 68%, 58%, 1);
   font-weight: 800;
   height: 30px;
   outline: none;
-  &:focus {
-    background-color: $deepPurple;
-    color: $white;
-  }
   &:hover {
     background-color: $deepPurple;    
     color: $white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+  }
+  &:focus {
+    background-color: $deepPurple;
+    color: $white;
   }
 }

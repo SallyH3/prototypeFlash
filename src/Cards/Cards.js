@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card.js';
+import Data from '../Data.js';
 
 export default class Cards extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      inputBox: '',
-      currentType: ''
+      inputBox: ''
     }
   }
 
@@ -23,6 +23,10 @@ export default class Cards extends Component {
   }
 
   render() {
+    // Data.map((link, index => {
+    //   key={index}
+    //   link={link}
+    // })
     if (this.props.cards.length === 0) {
       return <div></div>
     } else {
@@ -40,7 +44,7 @@ export default class Cards extends Component {
               <p className="learn-more">
                 <a
             href=
-            {this.props.cards.link}
+            {this.props.link[3]}
             className='link'
             target='_blank'
             rel='noopener noreferrer'>
