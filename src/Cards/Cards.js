@@ -5,7 +5,8 @@ export default class Cards extends Component {
   constructor() {
     super();
     this.state = {
-      inputBox: ''
+      inputBox: '',
+      currentType: ''
     }
   }
 
@@ -36,18 +37,15 @@ export default class Cards extends Component {
               <button onClick={this.checkAnswer} className='submit-answer'>Submit answer</button>
             </article>
             <footer className='footer-container'>
-              <p className='type-text'>Type:
-          {this.props.type}
-              </p>
               <p className="learn-more">
-                {/* <a
+                <a
             href=
-            // {card.link}
+            {this.props.cards.link}
             className='link'
             target='_blank'
             rel='noopener noreferrer'>
             Learn more
-            </a> */}
+            </a>
               </p>
             </footer>
           </section>

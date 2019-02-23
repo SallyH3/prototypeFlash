@@ -34,6 +34,7 @@
 
 //method buttons
 .button {
+  @include button-rules;
   background-color: $lavender;
   border: 1px solid $gray;
   cursor: pointer;
@@ -45,11 +46,6 @@
   margin: 10px;
   padding: 5px;
   width: 10em;
-  &:hover {
-    color: $white;
-    background-color: $deepPurple;
-    transition: all 0.3s ease-in-out;
-  }
 }
 
 //gets rid of outline after button click
