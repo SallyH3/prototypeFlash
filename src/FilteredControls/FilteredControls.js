@@ -7,6 +7,7 @@ const FilteredControls = (props) => {
         <article className='left-title'>
         Which prototype methods do you want to practice?
         </article>
+        <p className='left-subtitle'>...click on a method below and your card will display on the right!</p>
         <article className='button-container'>
         <button onClick={props.iteration} className='button iteration'>Iteration Methods</button>
         <button onClick={props.mutator}className='button mutator'>Mutator Methods</button>
