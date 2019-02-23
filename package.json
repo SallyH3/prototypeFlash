@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-scripts": "^2.1.5"
   },
   "scripts": {
@@ -24,9 +24,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "enzyme": "^3.8.0",
+    "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
+    "react-test-renderer": "^15.6.2",
     "sass": "^1.17.1"
   },
   "jest": {
