@@ -69,14 +69,6 @@
   margin-top: -1em;
 }
 
-//on bottom left side of card, this displays the type of method that the user's card is on so that the user knows which methods they are studying
-.type-text {
-  font-size: .9em;
-  margin-left: 1em;
-  margin-top: 4em;
-  text-align: left;
-}
-
 //link to mdn docs for more research on displayed method type
 .learn-more {
   border: none;
@@ -89,5 +81,10 @@
   letter-spacing: .1em;
   margin-right: 2em;
   margin-top: 6em;
+  text-decoration: underline;
   width: 8em;
+  &:hover {
+    color: $bluePurple;
+    transition: all 0.3s ease-in-out;
+  }
 }

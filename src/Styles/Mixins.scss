@@ -10,3 +10,21 @@ $black: hsla(360, 0%, 0%, 1);
 $gray: hsla(0, 0%, 50%, 1);
 $lightgray: hsla(0, 0%, 74%, 1);
 $deepPurple: hsla(263, 44%, 48%, 1);
+$bluePurple: hsla(238, 68%, 58%, 1);
+
+@mixin button-rules {
+  border-radius: 5px;
+  font-weight: 800;
+  height: 30px;
+  outline: none;
+  &:focus {
+    background-color: $deepPurple;
+    color: $white;
+  }
+  &:hover {
+    background-color: $deepPurple;    
+    color: $white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+}
