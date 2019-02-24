@@ -10,6 +10,10 @@ export default class Cards extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   checkAnswer = () => {
     if(this.state.inputBox === this.props.cards[this.props.randomNum].answer) {
       console.log(this.state.inputBox, this.props.cards[this.props.randomNum].answer, 'right')
@@ -23,10 +27,7 @@ export default class Cards extends Component {
   }
 
   render() {
-    // Data.map((link, index => {
-    //   key={index}
-    //   link={link}
-    // })
+    const cardInfo = this.props.cards[this.props.randomNum]
     if (this.props.cards.length === 0) {
       return <div></div>
     } else {
@@ -43,13 +44,13 @@ export default class Cards extends Component {
             <footer className='footer-container'>
               <p className="learn-more">
                 <a
-            href=
-            {this.props.link[3]}
-            className='link'
-            target='_blank'
-            rel='noopener noreferrer'>
-            Learn more
-            </a>
+                  href={cardInfo.link}
+                  className='link'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Learn more
+                </a>
               </p>
             </footer>
           </section>
