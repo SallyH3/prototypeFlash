@@ -14,7 +14,7 @@ export default class App extends Component {
       accessors: [],
       currentSelection: '',
       getLink: Data.map(method => {
-        return method.link;
+        return {link: method.link, id: method.id}
       })
     }
   }
@@ -40,21 +40,24 @@ getAccessorMethods = () => {
 // }
 
   render() {
-    let currentClick = Data.filter((method) => {
+    
+    let cards = Data.filter((method) => {
       return method.title === this.state.currentSelection;
     })
-    let randomNum = Math.floor(Math.random() * Math.floor(currentClick.length - 1));
+    let randomNum = Math.floor(Math.random() * Math.floor(cards.length - 1));
     return (
       <section className='app'>
         <Header />
         <FilteredControls 
-        mutator={this.getMutatorMethods}
-        iteration={this.getIterationMethods}
-        accessor={this.getAccessorMethods}
+          mutator={this.getMutatorMethods}
+          iteration={this.getIterationMethods}
+          accessor={this.getAccessorMethods}
         />
-        <Cards cards={currentClick}
-        link={this.state.getLink}
-        randomNum={randomNum}
+        <Cards 
+          currentCard={cards[randomNum]}
+          cards={cards}
+          links={this.state.getLink}
+          randomNum={randomNum}
         />
       </section>
     );
