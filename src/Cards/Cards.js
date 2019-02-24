@@ -6,20 +6,30 @@ export default class Cards extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputBox: ''
+      inputBox: '',
+      value: this.props.question
     }
   }
 
-  componentDidMount() {
-    console.log(this.props)
-  }
+  // componentDidMount() {
+  //   // console.log(this.props)
+  //   const value = this.props.question
+  //   this.setState({value})
+  // }
 
   checkAnswer = () => {
-    if(this.state.inputBox === this.props.cards[this.props.randomNum].answer) {
-      console.log(this.state.inputBox, this.props.cards[this.props.randomNum].answer, 'right')
+    if(this.state.inputBox === this.props.answer) {
+      console.log(this.state.inputBox, this.props.answer, 'right')
     } else {
-      console.log(this.state.inputBox, this.props.cards[this.props.randomNum].answer,'wrong')
+      console.log(this.state.inputBox, this.props.answer,'wrong')
     }
+  }
+
+  getSubmitFunction = () => {
+    this.props.getRandomNumber()
+    // this.checkAnswer();
+    // const value = this.props.cards[this.props.randomNum].question
+    // this.setState({value})
   }
 
   checkInput = (event) => {
@@ -27,24 +37,25 @@ export default class Cards extends Component {
   }
 
   render() {
-    const cardInfo = this.props.cards[this.props.randomNum]
-    if (this.props.cards.length === 0) {
-      return <div></div>
-    } else {
+    // if (this.props.cards.length === 0) {
+    //   return <div></div>
+    // } else {
+
       return (
         <section className='right-box'>
           <section className='right-box-cards-container'>
             <article className='question'>
-              {this.props.cards[this.props.randomNum].question}
+              {this.props.question}
             </article>
             <article className='right-controls'>
-              <input onChange={this.checkInput} value={this.state.inputBox} className='card-input' type='text' placeholder='.reduce()'></input>
-              <button onClick={this.checkAnswer} className='submit-answer'>Submit answer</button>
+              <input onChange={this.checkInput} value={this.state.inputBox} className='card-input' type='text' placeholder='ex: .reduce()'></input>
+              <button onClick={this.getSubmitFunction}
+              className='submit-answer'>Submit answer</button>
             </article>
             <footer className='footer-container'>
               <p className="learn-more">
                 <a
-                  href={cardInfo.link}
+                  href={this.props.link}
                   className='link'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -56,6 +67,7 @@ export default class Cards extends Component {
           </section>
         </section>
       )
+
     }
   }
-}
+// }

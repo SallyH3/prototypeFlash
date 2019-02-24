@@ -9,9 +9,9 @@ const FilteredControls = (props) => {
         </article>
         <p className='left-subtitle'>...click on a method below and your card will display on the right!</p>
         <article className='button-container'>
-        <button onClick={props.iteration} className='button iteration'>Iteration Methods</button>
-        <button onClick={props.mutator}className='button mutator'>Mutator Methods</button>
-        <button onClick={props.accessor} className='button accessor'>Accessor Methods</button>
+        <button id='Iteration methods' onClick={props.iteration} className='button iteration'>Iteration Methods</button>
+        <button id='Mutator methods' onClick={props.mutator}className='button mutator'>Mutator Methods</button>
+        <button id='Accessor methods' onClick={props.accessor} className='button accessor'>Accessor Methods</button>
         </article>
         <p className='need-to-study-text'>Keep track of what you need to study!</p>
         
