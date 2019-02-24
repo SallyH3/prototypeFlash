@@ -9,9 +9,11 @@ export default class App extends Component {
   constructor() {
     super();
     this.state={
+      cards:[],
       mutators: [],
       iterations: [],
       accessors: [],
+      currentCard: null,
       currentSelection: '',
       getLink: Data.map(method => {
         return {link: method.link, id: method.id}
@@ -19,46 +21,62 @@ export default class App extends Component {
     }
   }
 
-getMutatorMethods = () => {
-  this.setState({currentSelection: 'Mutator methods'})
-}
+  setCards = (event)=>{
+    let cards = Data.filter((method) => {
+      return method.title === event.target.id;
+    })
+    this.setState({cards}, this.getRandomNumber)
+  }
 
-getIterationMethods = () => {
-  this.setState({currentSelection: 'Iteration methods'})
-}
-
-getAccessorMethods = () => {
-  this.setState({currentSelection: 'Accessor methods'})
-}
-  
-//make sure to change this lifecycle below
-//after receiving fetchAPI
-// componentWillMount() {
-// this.getMutatorMethods();
-// this.getIterationMethods();
-// this.getAccessorMethods();
+  //these 3 should be one function
+// getMutatorMethods = () => {
+//   this.setState({currentSelection: 'Mutator methods'},this.setCards)
 // }
 
+// getIterationMethods = () => {
+//   this.setState({currentSelection: 'Iteration methods'},this.setCards)
+// }
+
+// getAccessorMethods = () => {
+//   this.setState({currentSelection: 'Accessor methods'},this.setCards)
+// }
+//rename randomizer
+getRandomNumber = ()=>{
+  let cards = this.state.cards
+const cardIndex =   Math.floor(Math.random() * Math.floor(cards.length - 1));
+this.setState({
+  currentCard:cards[cardIndex]
+})
+}
+
+checkReturnCard = () => {
+  const currentCard = this.state.currentCard
+  if(!currentCard) {
+    return <div></div>
+  } else {
+    const answer = currentCard.answer
+    const question = currentCard.question
+    const link = currentCard.link
+  return (
+    <Cards 
+      answer={answer}
+      question={question}
+      link={link}
+      getRandomNumber={this.getRandomNumber}
+    />)
+  }  
+}
+
   render() {
-    
-    let cards = Data.filter((method) => {
-      return method.title === this.state.currentSelection;
-    })
-    let randomNum = Math.floor(Math.random() * Math.floor(cards.length - 1));
     return (
       <section className='app'>
         <Header />
         <FilteredControls 
-          mutator={this.getMutatorMethods}
-          iteration={this.getIterationMethods}
-          accessor={this.getAccessorMethods}
+          mutator={this.setCards}
+          iteration={this.setCards}
+          accessor={this.setCards}
         />
-        <Cards 
-          currentCard={cards[randomNum]}
-          cards={cards}
-          links={this.state.getLink}
-          randomNum={randomNum}
-        />
+        {this.checkReturnCard()}
       </section>
     );
   }
