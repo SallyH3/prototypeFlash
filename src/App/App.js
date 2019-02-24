@@ -13,7 +13,7 @@ export default class App extends Component {
       mutators: [],
       iterations: [],
       accessors: [],
-      currentCard:null,
+      currentCard: null,
       currentSelection: '',
       getLink: Data.map(method => {
         return {link: method.link, id: method.id}
@@ -49,22 +49,22 @@ this.setState({
 })
 }
 
-checkReturnCard=()=>{
+checkReturnCard = () => {
   const currentCard = this.state.currentCard
-  console.log(currentCard)
-  if(!currentCard){
+  if(!currentCard) {
     return <div></div>
-  }else{
+  } else {
     const answer = currentCard.answer
     const question = currentCard.question
     const link = currentCard.link
-  return (<Cards 
-    answer={answer}
-    question={question}
-    link={link}
-    getRandomNumber={this.getRandomNumber}
-  />)
-}  
+  return (
+    <Cards 
+      answer={answer}
+      question={question}
+      link={link}
+      getRandomNumber={this.getRandomNumber}
+    />)
+  }  
 }
 
   render() {

@@ -7,29 +7,34 @@ export default class Cards extends Component {
     super(props);
     this.state = {
       inputBox: '',
-      value: this.props.question
+      question: this.props.question,
+      correct: null
     }
   }
 
   // componentDidMount() {
   //   // console.log(this.props)
-  //   const value = this.props.question
-  //   this.setState({value})
+  //   const question = this.props.question
+  //   this.setState({question})
   // }
 
   checkAnswer = () => {
+    //save these in local storage eventually
     if(this.state.inputBox === this.props.answer) {
       console.log(this.state.inputBox, this.props.answer, 'right')
+      this.setState({correct: true})
     } else {
       console.log(this.state.inputBox, this.props.answer,'wrong')
+      this.setState({correct: false})
     }
   }
 
   getSubmitFunction = () => {
     this.props.getRandomNumber()
-    // this.checkAnswer();
-    // const value = this.props.cards[this.props.randomNum].question
-    // this.setState({value})
+    this.setState({inputBox: ''})
+    this.checkAnswer();
+    // const question = this.props.cards[this.props.randomNum].question
+    // this.setState({question})
   }
 
   checkInput = (event) => {
@@ -40,7 +45,6 @@ export default class Cards extends Component {
     // if (this.props.cards.length === 0) {
     //   return <div></div>
     // } else {
-
       return (
         <section className='right-box'>
           <section className='right-box-cards-container'>

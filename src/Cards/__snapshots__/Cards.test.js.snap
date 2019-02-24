@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards should match snapshot 1`] = `
+<section
+  className="right-box"
+>
+  <section
+    className="right-box-cards-container"
+  >
+    <article
+      className="question"
+    />
+    <article
+      className="right-controls"
+    >
+      <input
+        className="card-input"
+        onChange={[Function]}
+        placeholder="ex: .reduce()"
+        type="text"
+        value=""
+      />
+      <button
+        className="submit-answer"
+        onClick={[Function]}
+      >
+        Submit answer
+      </button>
+    </article>
+    <footer
+      className="footer-container"
+    >
+      <p
+        className="learn-more"
+      >
+        <a
+          className="link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Learn more
+        </a>
+      </p>
+    </footer>
+  </section>
+</section>
+`;

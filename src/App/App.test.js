@@ -37,10 +37,14 @@ describe('App', () => {
 
   it('should have default states', () => {
   expect(wrapper.state()).toEqual({
+    cards:[],
     mutators: [],
     iterations: [],
     accessors: [],
+    currentCard: null,
     currentSelection: '',
-    getLink: Data.method.link
+    getLink: Data.map(method => {
+      return {link: method.link, id: method.id}
   });
+});
 });
