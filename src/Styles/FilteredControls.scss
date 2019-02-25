@@ -36,7 +36,7 @@
 .button {
   @include button-rules;
   background-color: $lavender;
-  border: 1px solid $gray;
+  border: 1px solid $primaryBorderColor;
   cursor: pointer;
   border-radius: .5em;
   font-family: $primary;
@@ -71,15 +71,18 @@ hr {
   .left-box {
     width: 50%;
   }
-hr {
-  width: 75%;
+
+  hr {
+    width: 75%;
   }
+  
   .button-container {
     margin-left: 0px;
     margin-right: 0px;
     width: 50%;
   }
 }
+
 @media screen and (max-width: 793px) {
   .left-box,
   .button-container {
