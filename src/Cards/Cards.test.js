@@ -2,11 +2,15 @@ import React from 'react';
 import Cards from './Cards';
 import { shallow } from 'enzyme';
 
+const mockQuestion = [];
+
 describe ('Cards', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <Cards />
+      <Cards 
+      question={mockQuestion}
+      />
     )
   });
 
@@ -17,7 +21,7 @@ describe ('Cards', () => {
   it ('should have default states', () => {
     expect(wrapper.state()).toEqual({
       inputBox: '',
-      question: this.props.question,
+      question: [],
       correct: null
     })
   })

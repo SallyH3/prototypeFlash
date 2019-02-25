@@ -21,7 +21,7 @@ export default class App extends Component {
     }
   }
 
-  setCards = (event)=>{
+  setCards = (event) => {
     let cards = Data.filter((method) => {
       return method.title === event.target.id;
     })
@@ -63,6 +63,8 @@ checkReturnCard = () => {
       question={question}
       link={link}
       getRandomNumber={this.getRandomNumber}
+      saveToStorage={this.props.saveToStorage}
+      removeCorrectFromStorage={this.props.removeCorrectFromStorage}
     />)
   }  
 }
