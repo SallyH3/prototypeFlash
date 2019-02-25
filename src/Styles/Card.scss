@@ -12,7 +12,7 @@
 
 .right-box-cards-container {
   border-radius: .5em;
-  border: .1em solid $gray;
+  border: .1em solid $primaryBorderColor;
   height: 14em;
   margin-top: 1.3em;
   padding: 1em;
@@ -32,7 +32,7 @@
 
 //answer input field
 .card-input {
-  border: 1px solid $gray;
+  border: 1px solid $primaryBorderColor;
   border-right: none;
   border-radius: .5em 0 0 .5em;
   font-size: .6em;
@@ -48,7 +48,7 @@
 
 //submit answer button - this displays on right side after click
 .submit-answer {
-  border: 1px solid $gray;
+  border: 1px solid $primaryBorderColor;
   border-radius: 0 .5em .5em 0;
   border-left: none;
   background-color: $lavender;
@@ -59,7 +59,7 @@
   width: 8em;
   &:hover {
     color: $white;
-    background-color: $deepPurple;
+    background-color: $primaryHoverColor;
     transition: all 0.3s ease-in-out;
   }
 }
@@ -75,7 +75,7 @@
 
 //link to mdn docs for more research on displayed method type
 .learn-more {
-  color: $main-color;
+  color: $primary-text-color;
   cursor: pointer;
   font-family: $primary;
   font-size: .7em;
@@ -86,13 +86,13 @@
   text-decoration: underline;
   width: 8em;
   &:hover {
-    color: $bluePurple;
+    color: $learnMoreHover;
     transition: all 0.3s ease-in-out;
   }
 }
 
 .answer-text {
-  color: $pinkPurple;
+  color: $answerRightWrongText;
   font-size: .8em;
   font-weight: bold;
   letter-spacing: .1em;
@@ -139,7 +139,7 @@
   }
   @media screen and (max-width: 386px) {
   .submit-answer {
-      border-left: 1px solid $gray;
+      border-left: 1px solid $primaryBorderColor;
       height: 2.7em;
       margin-top: .7em;
       padding: .4em;
@@ -153,7 +153,7 @@
   .submit-answer {
     border-radius: .5em .5em .5em .5em;
     display: block;
-    border-right: 1px solid $gray;
+    border-right: 1px solid $primaryBorderColor;
     height: 2.4em;
   }
 }

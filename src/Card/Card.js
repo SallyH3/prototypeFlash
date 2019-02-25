@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Data from '../Data.js';
 
 export default class Cards extends Component {
   constructor(props) {
@@ -14,12 +13,6 @@ export default class Cards extends Component {
     componentWillUpdate(nextProps, nextState) {
       localStorage.setItem('correct', 'JSON.stringify(correct)')
     }
-
-  // componentDidMount() {
-  //   // console.log(this.props)
-  //   const question = this.props.question
-  //   this.setState({question})
-  // }
 
   checkAnswer = () => {
     if(this.state.inputBox === this.props.card.answer) {
@@ -44,8 +37,6 @@ export default class Cards extends Component {
     this.props.randomizer()
     this.setState({inputBox: ''})
     this.checkAnswer();
-    // const question = this.props.cards[this.props.randomNum].question
-    // this.setState({question})
   }
 
   checkInput = (event) => {
@@ -55,9 +46,6 @@ export default class Cards extends Component {
    //card component should live in here and cards should map over each card and return card component each time and that is what will give multiple cards on the DOM
 
   render() {
-    // if (this.props.cards.length === 0) {
-    //   return <div></div>
-    // } else {
       return (
         <section className='right-box'>
           <section className='right-box-cards-container'>
@@ -88,4 +76,3 @@ export default class Cards extends Component {
 
     }
   }
-// }

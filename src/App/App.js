@@ -3,7 +3,6 @@ import '../Styles/Main.scss';
 import Header from '../Header/Header.js';
 import FilteredControls from '../FilteredControls/FilteredControls.js';
 import Card from '../Card/Card.js';
-import Data from '../Data.js';
 
 export default class App extends Component {
   constructor() {
@@ -13,53 +12,30 @@ export default class App extends Component {
       mutators: [],
       iterations: [],
       accessors: [],
-      // type: 'all',
+      deckInUse: [],
       currentCard: null,
-      currentSelection: '',
-      getLink: Data.map(method => {
-        return {link: method.link, id: method.id}
-      })
+      currentSelection: ''
     }
   }
 
-    //make sure components only know what they need to know about, app only needs to know about what cards need to display
-    //filtered controls doesn't need to know about cards, just the buttons values
-    //when you click button, it takes target id and gives back to app so that app knows what cards to display
-    //filter cards using setCards although, setCards should show all when buttons haven't been clicked.
-    //when button is clicked, causes app to filter cards and sends only cards that need to be shown to the cards component
-    //cards component only needs to know about subset of whatever was filtered
-
-  // getCurrentType() {
-    
-  // }
-
-  // componentDidMount() {
-  //   this.setState({cards: Data})
-  // }
-
-  setCards = (event) => {
-    let cards = Data.filter((method) => {
-      return method.title === event.target.id;
-    })
-    // return cards;
-    this.setState({cards}, this.randomizer)
+  componentDidMount() {
+    fetch('http://memoize-datasets.herokuapp.com/api/v1/SHmethods')
+    .then(response => response.json())
+    .then(response => this.setState({ cards: response.SHmethods }))
+    .catch(err => console.log('card error', err))
   }
 
-  //these 3 should be one function
-// getMutatorMethods = () => {
-//   this.setState({currentSelection: 'Mutator methods'},this.setCards)
-// }
+    //cards component only needs to know about subset of whatever was filtered
 
-// getIterationMethods = () => {
-//   this.setState({currentSelection: 'Iteration methods'},this.setCards)
-// }
-
-// getAccessorMethods = () => {
-//   this.setState({currentSelection: 'Accessor methods'},this.setCards)
-// }
+  setCards = (event) => {
+    let cards = this.state.cards.filter((method) => {
+      return method.title === event.target.id;
+    })
+    this.setState({deckInUse: cards}, this.randomizer)
+  }
 
 randomizer = ()=>{
-  let cards = this.state.cards
+  let cards = this.state.deckInUse
   const cardIndex = Math.floor(Math.random() * Math.floor(cards.length - 1));
   this.setState({
     currentCard:cards[cardIndex]
@@ -76,14 +52,9 @@ checkReturnCard = () => {
     const link = currentCard.link
   return (
     <Card 
-      // cards={this.setCards}
-      //these below will be passed from cards to card
-        card={currentCard}
-      // answer={answer}
-      // question={question}
-      // link={link}
+      card={currentCard}
       randomizer={this.randomizer}
-      />)
+    />)
     }  
   }
   

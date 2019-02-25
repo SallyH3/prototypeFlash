@@ -5,13 +5,11 @@
 $primary: 'Neucha', cursive;
 $lavender: hsla(240, 67%, 94%, 1);
 $white: hsla(360, 100%, 100%, 1);
-$main-color: hsla(360, 0%, 34%, 1);
-$black: hsla(360, 0%, 0%, 1);
-$gray: hsla(0, 0%, 50%, 1);
-$lightgray: hsla(0, 0%, 74%, 1);
-$deepPurple: hsla(263, 44%, 48%, 1);
-$bluePurple: hsla(238, 68%, 58%, 1);
-$pinkPurple: hsla(264, 52%, 63%, 1);
+$primary-text-color: hsla(360, 0%, 34%, 1);
+$primaryBorderColor: hsla(0, 0%, 50%, 1);
+$primaryHoverColor: hsla(263, 44%, 48%, 1);
+$learnMoreHover: hsla(238, 68%, 58%, 1);
+$answerRightWrongText: hsla(264, 52%, 63%, 1);
 
 @mixin button-rules {
   border-radius: 5px;
@@ -19,13 +17,13 @@ $pinkPurple: hsla(264, 52%, 63%, 1);
   height: 30px;
   outline: none;
   &:hover {
-    background-color: $deepPurple;    
+    background-color: $primaryHoverColor;    
     color: $white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
   &:focus {
-    background-color: $deepPurple;
+    background-color: $primaryHoverColor;
     color: $white;
   }
 }
