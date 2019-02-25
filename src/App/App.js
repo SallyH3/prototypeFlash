@@ -13,6 +13,7 @@ export default class App extends Component {
       mutators: [],
       iterations: [],
       accessors: [],
+      // type: 'all',
       currentCard: null,
       currentSelection: '',
       getLink: Data.map(method => {
@@ -21,11 +22,27 @@ export default class App extends Component {
     }
   }
 
+    //make sure components only know what they need to know about, app only needs to know about what cards need to display
+    //filtered controls doesn't need to know about cards, just the buttons values
+    //when you click button, it takes target id and gives back to app so that app knows what cards to display
+    //filter cards using setCards although, setCards should show all when buttons haven't been clicked.
+    //when button is clicked, causes app to filter cards and sends only cards that need to be shown to the cards component
+    //cards component only needs to know about subset of whatever was filtered
+
+  // getCurrentType() {
+    
+  // }
+
+  // componentDidMount() {
+  //   this.setState({cards: Data})
+  // }
+
   setCards = (event) => {
     let cards = Data.filter((method) => {
       return method.title === event.target.id;
     })
-    this.setState({cards}, this.getRandomNumber)
+    // return cards;
+    this.setState({cards}, this.randomizer)
   }
 
   //these 3 should be one function
@@ -40,10 +57,10 @@ export default class App extends Component {
 // getAccessorMethods = () => {
 //   this.setState({currentSelection: 'Accessor methods'},this.setCards)
 // }
-//rename randomizer
-getRandomNumber = ()=>{
+
+randomizer = ()=>{
   let cards = this.state.cards
-const cardIndex =   Math.floor(Math.random() * Math.floor(cards.length - 1));
+const cardIndex = Math.floor(Math.random() * Math.floor(cards.length - 1));
 this.setState({
   currentCard:cards[cardIndex]
 })
@@ -59,10 +76,13 @@ checkReturnCard = () => {
     const link = currentCard.link
   return (
     <Cards 
-      answer={answer}
-      question={question}
-      link={link}
-      getRandomNumber={this.getRandomNumber}
+      // cards={this.setCards}
+      //these below will be passed from cards to card
+        card={currentCard}
+      // answer={answer}
+      // question={question}
+      // link={link}
+      randomizer={this.randomizer}
       />)
     }  
   }

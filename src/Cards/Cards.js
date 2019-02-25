@@ -7,14 +7,11 @@ export default class Cards extends Component {
     super(props);
     this.state = {
       inputBox: '',
-      question: this.props.question,
-      correct: null
+      // question: this.props.card,
+      // correct: null,
+      incorrectCards: []
     }
   }
-
-    // componentDidMount() {
-
-    // }
 
     componentWillUpdate(nextProps, nextState) {
       localStorage.setItem('correct', 'JSON.stringify(correct)')
@@ -27,17 +24,23 @@ export default class Cards extends Component {
   // }
 
   checkAnswer = () => {
-    if(this.state.inputBox === this.props.answer) {
-      // console.log(this.state.inputBox, this.props.answer, 'right')
-      this.setState({correct: true})
+    if(this.state.inputBox === this.props.card.answer) {
+      console.log(this.state.inputBox, this.props.card.answer, 'right')
+      // this.setState({correct: true})
     } else {
-      // console.log(this.state.inputBox, this.props.answer,'wrong')
-      this.setState({correct: false})
+      console.log(this.state.inputBox, this.props.card.answer,'wrong')
+      let incorrectArr = [...this.state.incorrectCards, this.props.card]
+      // incorrectArr.push(this.state.question)
+      console.log(incorrectArr)
+      this.setState({incorrectCards: incorrectArr}, () => {
+        localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
+      }
+        )
     }
   }
 
   getSubmitFunction = () => {
-    this.props.getRandomNumber()
+    this.props.randomizer()
     this.setState({inputBox: ''})
     this.checkAnswer();
     // const question = this.props.cards[this.props.randomNum].question
@@ -48,7 +51,10 @@ export default class Cards extends Component {
     this.setState({inputBox: event.target.value})
   }
 
+   //card component should live in here and cards should map over each card and return card component each time and that is what will give multiple cards on the DOM
+
   render() {
+    console.log(this.props.card)
     // if (this.props.cards.length === 0) {
     //   return <div></div>
     // } else {
@@ -56,7 +62,7 @@ export default class Cards extends Component {
         <section className='right-box'>
           <section className='right-box-cards-container'>
             <article className='question'>
-              {this.props.question}
+              {this.props.card.question}
             </article>
             <article className='right-controls'>
               <input onChange={this.checkInput} value={this.state.inputBox} className='card-input' type='text' placeholder='ex: .reduce()'></input>
@@ -66,7 +72,7 @@ export default class Cards extends Component {
             <footer className='footer-container'>
               <p className="learn-more">
                 <a
-                  href={this.props.link}
+                  href={this.props.card.link}
                   className='link'
                   target='_blank'
                   rel='noopener noreferrer'
