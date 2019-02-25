@@ -10,10 +10,6 @@ export default class Cards extends Component {
     }
   }
 
-    componentWillUpdate(nextProps, nextState) {
-      localStorage.setItem('correct', 'JSON.stringify(correct)')
-    }
-
   checkAnswer = () => {
     if(this.state.inputBox === this.props.card.answer) {
       this.setState({
@@ -42,8 +38,6 @@ export default class Cards extends Component {
   checkInput = (event) => {
     this.setState({inputBox: event.target.value})
   }
-
-   //card component should live in here and cards should map over each card and return card component each time and that is what will give multiple cards on the DOM
 
   render() {
       return (
@@ -76,3 +70,4 @@ export default class Cards extends Component {
 
     }
   }
+// }

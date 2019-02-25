@@ -1,15 +1,42 @@
 import React from 'react';
-import Cards from './Cards';
+import Card from './Card';
 import { shallow } from 'enzyme';
 
-const mockQuestion = [];
+const mockQuestion = [
+  {
+  title: "Mutator methods",
+  type: "mutator",
+  correct: false,
+  question: "Copies a sequence of array elements within the array.",
+  answer: ".copyWithin()",
+  id: 1,
+  link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"
+  },
+  {
+  title: "Mutator methods",
+  type: "mutator",
+  correct: false,
+  question: "Fills all the elements of an array from a start index to an end index with a static value.",
+  answer: ".fill()",
+  id: 2,
+  link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"
+  },
+  {
+  title: "Mutator methods",
+  type: "mutator",
+  correct: false,
+  question: "Removes the last element from an array and returns that element.",
+  answer: ".pop()",
+  id: 3,
+  link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
+  }
+]
 
-describe ('Cards', () => {
+describe ('Card', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <Cards 
-      question={mockQuestion}
+      <Card card={mockQuestion}
       />
     )
   });
@@ -21,8 +48,8 @@ describe ('Cards', () => {
   it ('should have default states', () => {
     expect(wrapper.state()).toEqual({
       inputBox: '',
-      question: [],
-      correct: null
+      incorrectCards: [],
+      text: ''
     })
   })
 })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Card from './Card.js';
+import Card from '../Card/Card';
 
-export default class Card extends Component { 
+export default class Cards extends Component { 
   constructor() {
     super();
     this.state={ 
@@ -10,7 +10,7 @@ export default class Card extends Component {
 
   render() {
     return (
-      <section className='card'>
+      <section>
       </section>
     )
   }

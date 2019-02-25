@@ -23,9 +23,9 @@ describe('App', () => {
     mutators: [],
     iterations: [],
     accessors: [],
+    deckInUse: [],
     currentCard: null,
-    currentSelection: '',
-    getLink: []
+    currentSelection: ''
 });
 });
 });

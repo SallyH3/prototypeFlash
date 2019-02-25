@@ -25,12 +25,11 @@ export default class App extends Component {
     .catch(err => console.log('card error', err))
   }
 
-    //cards component only needs to know about subset of whatever was filtered
-
   setCards = (event) => {
     let cards = this.state.cards.filter((method) => {
       return method.title === event.target.id;
     })
+    // return cards;
     this.setState({deckInUse: cards}, this.randomizer)
   }
 
@@ -52,9 +51,9 @@ checkReturnCard = () => {
     const link = currentCard.link
   return (
     <Card 
-      card={currentCard}
-      randomizer={this.randomizer}
-    />)
+        card={currentCard}
+        randomizer={this.randomizer}
+      />)
     }  
   }
   
