@@ -21,12 +21,21 @@ export default class Cards extends Component {
         text: 'Almost! Try again!'
       })
       console.log(this.state.inputBox, this.props.card.answer,'wrong')
-      let incorrectArr = [...this.state.incorrectCards, this.props.card]
-      this.setState({incorrectCards: incorrectArr}, () => {
-        localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
-      }
-        )
+      this.getStorage();
+      // let incorrectArr = [...this.state.incorrectCards, this.props.card]
+      // this.setState({incorrectCards: incorrectArr}, () => {
+      //   localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
+      // }
+      //   )
     }
+  }
+
+  getStorage() {
+    let incorrectArr = [...this.state.incorrectCards, this.props.card]
+    this.setState({incorrectCards: incorrectArr}, () => {
+      localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
+    }
+      )
   }
 
   getSubmitFunction = () => {

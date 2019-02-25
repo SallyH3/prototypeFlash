@@ -32,6 +32,8 @@ const mockQuestion = [
   }
 ]
 
+const mockFunc = jest.fn();
+
 describe ('Card', () => {
   let wrapper;
   beforeEach(() => {
@@ -45,11 +47,19 @@ describe ('Card', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it ('should have default states', () => {
+  it('should have default states', () => {
     expect(wrapper.state()).toEqual({
       inputBox: '',
       incorrectCards: [],
       text: ''
     })
+  })
+
+  it('should grab text from input box when checkInput is invoked', () => {
+    wrapper.find('.card-input').simulate('change', {target: {value: '.pop()'}});
+  })
+
+  it('should check answers from user', () => {
+    
   })
 })
