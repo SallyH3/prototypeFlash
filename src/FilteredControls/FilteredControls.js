@@ -14,8 +14,7 @@ const FilteredControls = (props) => {
         <button id='Accessor methods' onClick={props.accessor} className='button accessor'>Accessor Methods</button>
         </article>
         <hr></hr>
-        <p className='need-to-study-text'>Keep track of what you need to study!</p>
-        <p className='study-list-text'>Study list: 
+        <p className='study-list-text'>Number wrong 
         {props.saveAnswers}
         </p>
       </section>
