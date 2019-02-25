@@ -16,4 +16,11 @@ body {
   color: $main-color;
 }
 
+@media screen and (max-width: 793px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 

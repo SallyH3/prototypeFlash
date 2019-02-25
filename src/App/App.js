@@ -63,12 +63,10 @@ checkReturnCard = () => {
       question={question}
       link={link}
       getRandomNumber={this.getRandomNumber}
-      saveToStorage={this.props.saveToStorage}
-      removeCorrectFromStorage={this.props.removeCorrectFromStorage}
-    />)
-  }  
-}
-
+      />)
+    }  
+  }
+  
   render() {
     return (
       <section className='app'>
@@ -77,6 +75,8 @@ checkReturnCard = () => {
           mutator={this.setCards}
           iteration={this.setCards}
           accessor={this.setCards}
+          //not sure if this is working below
+          saveAnswers={this.props.correct}
         />
         {this.checkReturnCard()}
       </section>

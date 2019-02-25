@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Data from '../Data.js';
 
 const FilteredControls = (props) => {
@@ -13,12 +13,11 @@ const FilteredControls = (props) => {
         <button id='Mutator methods' onClick={props.mutator}className='button mutator'>Mutator Methods</button>
         <button id='Accessor methods' onClick={props.accessor} className='button accessor'>Accessor Methods</button>
         </article>
+        <hr></hr>
         <p className='need-to-study-text'>Keep track of what you need to study!</p>
-        
-        {/* <p className='study-list-text'>Study list: 
-        {this.props.cards.correct}
-        //move this into app after cards
-        </p> */}
+        <p className='study-list-text'>Study list: 
+        {props.saveAnswers}
+        </p>
       </section>
   )
 }

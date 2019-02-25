@@ -14,6 +14,7 @@
   border-radius: .5em;
   border: .1em solid $gray;
   height: 14em;
+  margin-top: 1.3em;
   padding: 1em;
   width: 27.6em;
 }
@@ -74,8 +75,6 @@
 
 //link to mdn docs for more research on displayed method type
 .learn-more {
-  border: none;
-  border-radius: .5em;
   color: $main-color;
   cursor: pointer;
   font-family: $primary;
@@ -89,5 +88,65 @@
   &:hover {
     color: $bluePurple;
     transition: all 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1004px) {
+  .right-box,
+  .right-box-cards-container {
+    display: block;
+    width: 100%;
+  }
+  .card-input {
+    height: 2.5em;
+    width: 10em;
+  }
+  .submit-answer {
+    height: 2.8em;
+    padding: .4em;
+    width: 6em;
+  }
+  .question {
+    font-size: .8em;
+  }
+}
+@media screen and (max-width: 793px) {
+  .right-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .right-box {
+    display: flex;
+    margin-left: 0em;
+    margin-top: 1em;
+    width: 100%;
+  }
+  .learn-more {
+    font-size: .5em;
+  }
+  .right-controls {
+    margin: .9em 2em;
+  }
+  @media screen and (max-width: 386px) {
+  .submit-answer {
+      border-left: 1px solid $gray;
+      height: 2.7em;
+      margin-top: .7em;
+      padding: .4em;
+      width: 12em;
+    }
+    .card-input {
+      width: 10.7em;
+    }
+  }
+  .card-input,
+  .submit-answer {
+    border-radius: .5em .5em .5em .5em;
+    display: block;
+    border-right: 1px solid $gray;
+    height: 2.4em;
   }
 }

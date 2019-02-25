@@ -29,7 +29,7 @@
 .button-container {
   display: flex;
   justify-content: space-between;
-  margin: 1.6em;
+  margin: 2em;
 }
 
 //method buttons
@@ -43,9 +43,14 @@
   font-size: .8em;
   height: 3.4em;
   letter-spacing: .1em;
-  margin: 10px;
-  padding: 5px;
+  margin: 1em;
+  padding: .5em;
   width: 10em;
+}
+
+//creates line under method buttons on left of page
+hr {
+  width: 80%;
 }
 
 //gets rid of outline after button click
@@ -54,10 +59,61 @@
 //text on left side of app - bottom left 'study' area
 .need-to-study-text {
   font-size: 1.2em;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 //local storage number area
 .study-list-text {
   text-decoration: underline;
   margin-right: 3em;
+}
+
+@media screen and (max-width: 1004px) {
+  .left-box {
+    width: 50%;
+  }
+hr {
+  width: 75%;
+  }
+  .button-container {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 793px) {
+  .left-box,
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button {
+    width: 75%;
+  }
+
+  .left-title,
+  .need-to-study-text,
+  .study-list-text {
+    font-size: .9em;
+  }
+  
+  .left-subtitle {
+    font-size: .7em;
+    &:hover {
+      font-size: .8em;
+    }
+  }
+
+  .button-container {
+    width: 100%;
+    margin: .8em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .button {
+    margin: 1em;
+    width: 75%;
+  }
 }
