@@ -28,3 +28,22 @@ font-size: 1.4em;
 margin-top: .3em;
 text-align: center;
 }
+
+@media screen and (max-width: 405px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2.9em;
+    margin-bottom: .2em;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    margin-top: .8em;
+    margin-left: .5em;
+    margin-right: .5em;
+  }
+}
