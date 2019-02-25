@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../Styles/Main.scss';
 import Header from '../Header/Header.js';
 import FilteredControls from '../FilteredControls/FilteredControls.js';
-import Cards from '../Cards/Cards.js';
+import Card from '../Card/Card.js';
 import Data from '../Data.js';
 
 export default class App extends Component {
@@ -60,9 +60,9 @@ export default class App extends Component {
 
 randomizer = ()=>{
   let cards = this.state.cards
-const cardIndex = Math.floor(Math.random() * Math.floor(cards.length - 1));
-this.setState({
-  currentCard:cards[cardIndex]
+  const cardIndex = Math.floor(Math.random() * Math.floor(cards.length - 1));
+  this.setState({
+    currentCard:cards[cardIndex]
 })
 }
 
@@ -75,7 +75,7 @@ checkReturnCard = () => {
     const question = currentCard.question
     const link = currentCard.link
   return (
-    <Cards 
+    <Card 
       // cards={this.setCards}
       //these below will be passed from cards to card
         card={currentCard}
