@@ -12,6 +12,14 @@ export default class Cards extends Component {
     }
   }
 
+    // componentDidMount() {
+
+    // }
+
+    componentWillUpdate(nextProps, nextState) {
+      localStorage.setItem('correct', 'JSON.stringify(correct)')
+    }
+
   // componentDidMount() {
   //   // console.log(this.props)
   //   const question = this.props.question
@@ -19,12 +27,11 @@ export default class Cards extends Component {
   // }
 
   checkAnswer = () => {
-    //save these in local storage eventually
     if(this.state.inputBox === this.props.answer) {
-      console.log(this.state.inputBox, this.props.answer, 'right')
+      // console.log(this.state.inputBox, this.props.answer, 'right')
       this.setState({correct: true})
     } else {
-      console.log(this.state.inputBox, this.props.answer,'wrong')
+      // console.log(this.state.inputBox, this.props.answer,'wrong')
       this.setState({correct: false})
     }
   }
