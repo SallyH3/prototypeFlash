@@ -39,7 +39,7 @@ export default class Cards extends Component {
   }
 
   getSubmitFunction = () => {
-    this.props.randomizer()
+    this.props.randomizer();
     this.setState({inputBox: ''})
     this.checkAnswer();
   }
