@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-export default class Cards extends Component {
+export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
       inputBox: '',
       incorrectCards: [],
-      text: ''
+      text: '',
+      incorrectAnswerCounter: 0
     }
   }
 
@@ -15,18 +16,12 @@ export default class Cards extends Component {
       this.setState({
         text: 'Great job! You got it right!'
       })
-      console.log(this.state.inputBox, this.props.card.answer, 'right')
     } else {
       this.setState({
         text: 'Almost! Try again!'
       })
-      console.log(this.state.inputBox, this.props.card.answer,'wrong')
+      this.state.incorrectAnswerCounter++;
       this.getStorage();
-      // let incorrectArr = [...this.state.incorrectCards, this.props.card]
-      // this.setState({incorrectCards: incorrectArr}, () => {
-      //   localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
-      // }
-      //   )
     }
   }
 
@@ -71,6 +66,8 @@ export default class Cards extends Component {
                 >
                   Learn more
                 </a>
+              </p>
+              <p className='study-list-text'>Number wrong {this.state.incorrectAnswerCounter}
               </p>
             </footer>
           </section>

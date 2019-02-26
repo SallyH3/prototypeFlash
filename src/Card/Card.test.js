@@ -32,8 +32,6 @@ const mockQuestion = [
   }
 ]
 
-const mockFunc = jest.fn();
-const mockCheckAnswer = jest.fn();
 const mockRandomizer = jest.fn();
 // const getSubmitFunction = jest.fn();
 
@@ -43,7 +41,6 @@ describe ('Card', () => {
     wrapper = shallow(
       <Card card={mockQuestion}
       randomizer={mockRandomizer}
-      // getSubmitFunction={mockGetSubmitFunction}
       />
     )
   });
@@ -56,7 +53,8 @@ describe ('Card', () => {
     expect(wrapper.state()).toEqual({
       inputBox: '',
       incorrectCards: [],
-      text: ''
+      text: '',
+      incorrectAnswerCounter: 0
     })
   })
 
@@ -65,13 +63,7 @@ describe ('Card', () => {
   })
 
   it('should check answers from user when submit button is clicked', () => {
-    // wrapper.instance().getSubmitFunction = jest.fn()
-    // wrapper.instance().getSubmitFunction()
-    // const instance = wrapper.instance();
-    // jest.spyOn(instance, 'getSubmitFunction');
     wrapper.find('.submit-answer').simulate('click');
-    // console.log(wrapper.instance().getSubmitFunction)
-    // expect(instance.getSubmitFunction).toHaveBeenCalled();
     expect(wrapper.state('text')).toEqual('Almost! Try again!');
   })
 })

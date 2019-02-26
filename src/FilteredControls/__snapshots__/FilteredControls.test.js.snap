@@ -37,10 +37,5 @@ exports[`FilteredControls should match snapshot 1`] = `
     </button>
   </article>
   <hr />
-  <p
-    className="study-list-text"
-  >
-    Number wrong
-  </p>
 </section>
 `;

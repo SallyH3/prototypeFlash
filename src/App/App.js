@@ -29,7 +29,6 @@ export default class App extends Component {
     let cards = this.state.cards.filter((method) => {
       return method.title === event.target.id;
     })
-    // return cards;
     this.setState({deckInUse: cards}, this.randomizer)
   }
 
@@ -46,9 +45,6 @@ checkReturnCard = () => {
   if(!currentCard) {
     return <div></div>
   } else {
-    const answer = currentCard.answer
-    const question = currentCard.question
-    const link = currentCard.link
   return (
     <Card 
         card={currentCard}
