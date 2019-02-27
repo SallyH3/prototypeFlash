@@ -9,9 +9,6 @@ export default class App extends Component {
     super();
     this.state={
       cards:[],
-      mutators: [],
-      iterations: [],
-      accessors: [],
       deckInUse: [],
       currentCard: null,
       currentSelection: '',
