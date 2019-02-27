@@ -35,7 +35,7 @@ npm test
 ---
 
 #### Abstract:
-For my final solo project in mod2 at Turing School of Sotware & Design, I created a flashcard app for users to study prototype methods. 
+For my final solo project in mod2 at Turing School of Sotware & Design, I created a flashcard app for users to study prototype methods. Users can click on each method button and the button stays active so that they know which methods they're practicing, can enter their answer based off of the placeholder example text, can click submit to see if their answer was right or wrong, can click 'learn more' on the card to take them to the MDN docs on the method, and can see how many answers they got wrong throughout their time using the app(persists on page load). The app is fully responsive down to 320px mobile view.
 
 ---
 
