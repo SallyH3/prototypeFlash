@@ -91,6 +91,17 @@
   }
 }
 
+.number-wrong-text {
+  font-family: $primary;
+  font-size: .7em;
+  font-weight: bold;
+  height: 3.4em;
+  letter-spacing: .1em;
+  margin-right: 2em;
+  margin-top: 2em;
+  width: 8em;
+}
+
 .answer-text {
   color: $answerRightWrongText;
   font-size: .8em;
@@ -131,12 +142,35 @@
     margin-top: 1em;
     width: 100%;
   }
-  .learn-more {
-    font-size: .5em;
+
+  .card-input {
+    border-radius: .5em .5em .5em .5em;
+    display: block;
+    border-right: 1px solid $primaryBorderColor;
+    margin-left: 8em;
   }
+
+  .submit-answer {
+    border-radius: .5em .5em .5em .5em;
+    border-left: 1px solid $primaryBorderColor;
+    margin-top: .7em;
+    padding: .4em;
+    width: 12em;
+  }
+  .card-input {
+    width: 10.7em;
+  }
+
+  .learn-more,
+  .number-wrong-text
+  .answer-text {
+    font-size: .6em;
+  }
+
   .right-controls {
     margin: .9em 2em;
   }
+
   @media screen and (max-width: 386px) {
   .submit-answer {
       border-left: 1px solid $primaryBorderColor;
@@ -147,13 +181,8 @@
     }
     .card-input {
       width: 10.7em;
+      margin-left: 2em;
     }
   }
-  .card-input,
-  .submit-answer {
-    border-radius: .5em .5em .5em .5em;
-    display: block;
-    border-right: 1px solid $primaryBorderColor;
-    height: 2.4em;
-  }
+
 }

@@ -1,15 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match snapshot 1`] = `
-<section
-  className="app"
->
-  <Header />
-  <FilteredControls
-    accessor={[Function]}
-    iteration={[Function]}
-    mutator={[Function]}
-  />
-  <div />
-</section>
+<App>
+  <section
+    className="app"
+  >
+    <Header>
+      <header>
+        <p
+          className="title"
+        >
+          prototypeFlash
+        </p>
+        <p
+          className="subtitle"
+        >
+          A flashcard app for users to study prototype methods
+        </p>
+      </header>
+    </Header>
+    <FilteredControls
+      accessor={[Function]}
+      activeButton=""
+      iteration={[Function]}
+      mutator={[Function]}
+    >
+      <section
+        className="left-box"
+      >
+        <article
+          className="left-title"
+        >
+          Which prototype methods do you want to practice?
+        </article>
+        <p
+          className="left-subtitle"
+        >
+          ...click on a method below and your card will display on the right!
+        </p>
+        <article
+          className="button-container"
+        >
+          <button
+            className="button iteration "
+            id="Iteration methods"
+            name="iterator"
+            onClick={[Function]}
+          >
+            Iteration Methods
+          </button>
+          <button
+            className="button mutator "
+            id="Mutator methods"
+            name="mutator"
+            onClick={[Function]}
+          >
+            Mutator Methods
+          </button>
+          <button
+            className="button accessor "
+            id="Accessor methods"
+            name="accessor"
+            onClick={[Function]}
+          >
+            Accessor Methods
+          </button>
+        </article>
+        <hr />
+      </section>
+    </FilteredControls>
+    <div />
+  </section>
+</App>
+`;
+
+exports[`App should return card when currentCard is falsey 1`] = `
+<App>
+  <section
+    className="app"
+  >
+    <Header>
+      <header>
+        <p
+          className="title"
+        >
+          prototypeFlash
+        </p>
+        <p
+          className="subtitle"
+        >
+          A flashcard app for users to study prototype methods
+        </p>
+      </header>
+    </Header>
+    <FilteredControls
+      accessor={[Function]}
+      activeButton=""
+      iteration={[Function]}
+      mutator={[Function]}
+    >
+      <section
+        className="left-box"
+      >
+        <article
+          className="left-title"
+        >
+          Which prototype methods do you want to practice?
+        </article>
+        <p
+          className="left-subtitle"
+        >
+          ...click on a method below and your card will display on the right!
+        </p>
+        <article
+          className="button-container"
+        >
+          <button
+            className="button iteration "
+            id="Iteration methods"
+            name="iterator"
+            onClick={[Function]}
+          >
+            Iteration Methods
+          </button>
+          <button
+            className="button mutator "
+            id="Mutator methods"
+            name="mutator"
+            onClick={[Function]}
+          >
+            Mutator Methods
+          </button>
+          <button
+            className="button accessor "
+            id="Accessor methods"
+            name="accessor"
+            onClick={[Function]}
+          >
+            Accessor Methods
+          </button>
+        </article>
+        <hr />
+      </section>
+    </FilteredControls>
+    <div />
+  </section>
+</App>
 `;

@@ -1,15 +1,12 @@
 import React from 'react';
 import App from './App';
-import { shallow } from 'enzyme';
-
-const mockLink = [];
+import { shallow, mount } from 'enzyme';
 
 describe('App', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow (
-      <App getLink={mockLink}
-      />
+    wrapper = mount(
+      <App />
     )
   });
 
@@ -23,9 +20,23 @@ describe('App', () => {
     mutators: [],
     iterations: [],
     accessors: [],
+    deckInUse: [],
     currentCard: null,
     currentSelection: '',
-    getLink: []
+    activeButton: ''
 });
 });
+
+it('should return card when currentCard is falsey', () => {
+  wrapper.state().currentCard = true
+  wrapper.instance().checkReturnCard()
+  expect(wrapper).toMatchSnapshot()
+});
+
+it('should create deck for quiz', () => {
+  expect(wrapper.state('deckInUse')).toEqual([])
+  wrapper.instance().setCards({target: {id: "Mutator methods"}})
+  expect(wrapper.state('deckInUse')).toEqual([])
+});
+
 });

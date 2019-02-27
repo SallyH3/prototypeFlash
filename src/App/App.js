@@ -14,7 +14,8 @@ export default class App extends Component {
       accessors: [],
       deckInUse: [],
       currentCard: null,
-      currentSelection: ''
+      currentSelection: '',
+      activeButton: ''
     }
   }
 
@@ -25,9 +26,13 @@ export default class App extends Component {
     .catch(err => console.log('card error', err))
   }
 
-    //cards component only needs to know about subset of whatever was filtered
+  handleButtonChange(event) {
+    let activeState = event.target.name;
+    this.setState({activeButton: activeState})
+  }
 
   setCards = (event) => {
+    this.handleButtonChange(event);
     let cards = this.state.cards.filter((method) => {
       return method.title === event.target.id;
     })
@@ -47,14 +52,11 @@ checkReturnCard = () => {
   if(!currentCard) {
     return <div></div>
   } else {
-    const answer = currentCard.answer
-    const question = currentCard.question
-    const link = currentCard.link
   return (
     <Card 
-      card={currentCard}
-      randomizer={this.randomizer}
-    />)
+        card={currentCard}
+        randomizer={this.randomizer}
+      />)
     }  
   }
   
@@ -68,6 +70,7 @@ checkReturnCard = () => {
           accessor={this.setCards}
           //not sure if this is working below
           saveAnswers={this.props.correct}
+          activeButton={this.state.activeButton}
         />
         {this.checkReturnCard()}
       </section>

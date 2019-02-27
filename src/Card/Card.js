@@ -1,40 +1,51 @@
 import React, { Component } from 'react';
 
-export default class Cards extends Component {
+export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
       inputBox: '',
       incorrectCards: [],
-      text: ''
+      text: '',
+      incorrectAnswerCounter: 0
     }
   }
-
-    componentWillUpdate(nextProps, nextState) {
-      localStorage.setItem('correct', 'JSON.stringify(correct)')
-    }
 
   checkAnswer = () => {
     if(this.state.inputBox === this.props.card.answer) {
       this.setState({
         text: 'Great job! You got it right!'
       })
-      console.log(this.state.inputBox, this.props.card.answer, 'right')
     } else {
       this.setState({
         text: 'Almost! Try again!'
       })
-      console.log(this.state.inputBox, this.props.card.answer,'wrong')
-      let incorrectArr = [...this.state.incorrectCards, this.props.card]
-      this.setState({incorrectCards: incorrectArr}, () => {
-        localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
-      }
-        )
+      this.state.incorrectAnswerCounter++;
+      this.setStorage();
+    }
+  }
+
+  componentDidMount() {
+    this.getStorage();
+  }
+
+  setStorage() {
+    let incorrectArr = [...this.state.incorrectCards, this.props.card]
+    this.setState({incorrectCards: incorrectArr}, () => {
+      localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
+    }
+      )
+  }
+
+  getStorage() {
+    if (localStorage.getItem('incorrectAnswers') !== null) {
+      let getItem = JSON.parse(localStorage.getItem('incorrectAnswers'))
+      this.setState({incorrectAnswerCounter: getItem.length});
     }
   }
 
   getSubmitFunction = () => {
-    this.props.randomizer()
+    this.props.randomizer();
     this.setState({inputBox: ''})
     this.checkAnswer();
   }
@@ -42,8 +53,6 @@ export default class Cards extends Component {
   checkInput = (event) => {
     this.setState({inputBox: event.target.value})
   }
-
-   //card component should live in here and cards should map over each card and return card component each time and that is what will give multiple cards on the DOM
 
   render() {
       return (
@@ -53,7 +62,13 @@ export default class Cards extends Component {
               {this.props.card.question}
             </article>
             <article className='right-controls'>
-              <input onChange={this.checkInput} value={this.state.inputBox} className='card-input' type='text' placeholder='ex: .reduce()'></input>
+              <input 
+                onChange={this.checkInput} 
+                className='card-input' 
+                value={this.state.inputBox}
+                type='text' 
+                placeholder='ex: .reduce()'>
+              </input>
               <button onClick={this.getSubmitFunction}
               className='submit-answer'>Submit answer</button>
               <p className = 'answer-text'>{this.state.text}</p>
@@ -69,6 +84,8 @@ export default class Cards extends Component {
                   Learn more
                 </a>
               </p>
+              <p className='number-wrong-text'>Number wrong {this.state.incorrectAnswerCounter}
+              </p>
             </footer>
           </section>
         </section>
@@ -76,3 +93,4 @@ export default class Cards extends Component {
 
     }
   }
+// }
