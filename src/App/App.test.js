@@ -17,9 +17,6 @@ describe('App', () => {
   it('should have default states', () => {
   expect(wrapper.state()).toEqual({
     cards:[],
-    mutators: [],
-    iterations: [],
-    accessors: [],
     deckInUse: [],
     currentCard: null,
     currentSelection: '',
