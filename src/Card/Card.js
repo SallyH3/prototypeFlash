@@ -45,7 +45,7 @@ export default class Card extends Component {
     }
   }
 
-  getSubmitFunction = () => {
+  handleSubmit = () => {
     this.props.randomizer();
     this.setState({inputBox: ''})
     this.checkAnswer();
@@ -70,7 +70,7 @@ export default class Card extends Component {
               type='text' 
               placeholder='ex: .reduce()'>
             </input>
-            <button onClick={this.getSubmitFunction}
+            <button onClick={this.handleSubmit}
             className='submit-answer'>Submit answer</button>
             <p className = 'answer-text'>{this.state.text}</p>
           </article>

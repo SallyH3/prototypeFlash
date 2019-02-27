@@ -40,7 +40,7 @@ randomizer = ()=>{
   let cards = this.state.deckInUse
   const cardIndex = Math.floor(Math.random() * Math.floor(cards.length - 1));
   this.setState({
-    currentCard:cards[cardIndex]
+    currentCard: cards[cardIndex]
 })
 }
 
