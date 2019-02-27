@@ -21,16 +21,27 @@ export default class Card extends Component {
         text: 'Almost! Try again!'
       })
       this.state.incorrectAnswerCounter++;
-      this.getStorage();
+      this.setStorage();
     }
   }
 
-  getStorage() {
+  componentDidMount() {
+    this.getStorage();
+  }
+
+  setStorage() {
     let incorrectArr = [...this.state.incorrectCards, this.props.card]
     this.setState({incorrectCards: incorrectArr}, () => {
       localStorage.setItem('incorrectAnswers', JSON.stringify(incorrectArr))
     }
       )
+  }
+
+  getStorage() {
+    if (localStorage.getItem('incorrectAnswers') !== null) {
+      let getItem = JSON.parse(localStorage.getItem('incorrectAnswers'))
+      this.setState({incorrectAnswerCounter: getItem.length});
+    }
   }
 
   getSubmitFunction = () => {
@@ -51,7 +62,13 @@ export default class Card extends Component {
               {this.props.card.question}
             </article>
             <article className='right-controls'>
-              <input onChange={this.checkInput} value={this.state.inputBox} className='card-input' type='text' placeholder='ex: .reduce()'></input>
+              <input 
+                onChange={this.checkInput} 
+                className='card-input' 
+                value={this.state.inputBox}
+                type='text' 
+                placeholder='ex: .reduce()'>
+              </input>
               <button onClick={this.getSubmitFunction}
               className='submit-answer'>Submit answer</button>
               <p className = 'answer-text'>{this.state.text}</p>
@@ -67,7 +84,7 @@ export default class Card extends Component {
                   Learn more
                 </a>
               </p>
-              <p className='study-list-text'>Number wrong {this.state.incorrectAnswerCounter}
+              <p className='number-wrong-text'>Number wrong {this.state.incorrectAnswerCounter}
               </p>
             </footer>
           </section>

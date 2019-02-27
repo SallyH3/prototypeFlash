@@ -22,8 +22,4 @@ $answerRightWrongText: hsla(264, 52%, 63%, 1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
-  &:focus {
-    background-color: $primaryHoverColor;
-    color: $white;
-  }
 }

@@ -35,6 +35,7 @@ const mockQuestion = [
 const mockRandomizer = jest.fn();
 // const getSubmitFunction = jest.fn();
 
+
 describe ('Card', () => {
   let wrapper;
   beforeEach(() => {

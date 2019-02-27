@@ -22,7 +22,8 @@ describe('App', () => {
     accessors: [],
     deckInUse: [],
     currentCard: null,
-    currentSelection: ''
+    currentSelection: '',
+    activeButton: ''
 });
 });
 

@@ -45,7 +45,7 @@ exports[`Card should match snapshot 1`] = `
         </a>
       </p>
       <p
-        className="study-list-text"
+        className="number-wrong-text"
       >
         Number wrong 
         0

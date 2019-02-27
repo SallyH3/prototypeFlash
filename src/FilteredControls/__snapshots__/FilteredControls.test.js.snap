@@ -18,20 +18,23 @@ exports[`FilteredControls should match snapshot 1`] = `
     className="button-container"
   >
     <button
-      className="button iteration"
+      className="button iteration "
       id="Iteration methods"
+      name="iterator"
     >
       Iteration Methods
     </button>
     <button
-      className="button mutator"
+      className="button mutator "
       id="Mutator methods"
+      name="mutator"
     >
       Mutator Methods
     </button>
     <button
-      className="button accessor"
+      className="button accessor "
       id="Accessor methods"
+      name="accessor"
     >
       Accessor Methods
     </button>
