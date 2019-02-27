@@ -88,7 +88,7 @@ I feel more comfortable with React now that I've done a second project. My under
 
 #### Future iterations:
 
-In the future, I'd like to add a study list feature that changes the 'Number Wrong' text into a button where the user can click it and the cards will display with a scroll bar for them to study questions they had gotten wrong.   
+In the future, I'd like to add a study list feature that changes the 'Number wrong' text into a button where the user can click this button and the cards will display with a scroll bar for them to study questions they had gotten wrong.   
 
 ---
 
