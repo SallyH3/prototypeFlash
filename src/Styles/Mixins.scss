@@ -3,8 +3,8 @@
 
 //colors used throughout app
 $primary: 'Neucha', cursive;
-$lavender: hsla(240, 67%, 94%, 1);
-$white: hsla(360, 100%, 100%, 1);
+$background: hsla(240, 67%, 94%, 1);
+$hoverTextColorAndCardBackground: hsla(360, 100%, 100%, 1);
 $primary-text-color: hsla(360, 0%, 34%, 1);
 $primaryBorderColor: hsla(0, 0%, 50%, 1);
 $primaryHoverColor: hsla(263, 44%, 48%, 1);
@@ -18,7 +18,7 @@ $answerRightWrongText: hsla(264, 52%, 63%, 1);
   outline: none;
   &:hover {
     background-color: $primaryHoverColor;    
-    color: $white;
+    color: $hoverTextColorAndCardBackground;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }

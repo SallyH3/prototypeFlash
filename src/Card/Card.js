@@ -20,7 +20,8 @@ export default class Card extends Component {
       this.setState({
         text: 'Almost! Try again!'
       })
-      this.state.incorrectAnswerCounter++;
+      let counter = this.state.incorrectAnswerCounter + 1;
+      this.setState({incorrectAnswerCounter: counter})
       this.setStorage();
     }
   }
@@ -40,7 +41,7 @@ export default class Card extends Component {
   getStorage() {
     if (localStorage.getItem('incorrectAnswers') !== null) {
       let getItem = JSON.parse(localStorage.getItem('incorrectAnswers'))
-      this.setState({incorrectAnswerCounter: getItem.length});
+      this.setState({incorrectAnswerCounter: getItem.length, incorrectCards: getItem});
     }
   }
 
@@ -55,42 +56,41 @@ export default class Card extends Component {
   }
 
   render() {
-      return (
-        <section className='right-box'>
-          <section className='right-box-cards-container'>
-            <article className='question'>
-              {this.props.card.question}
-            </article>
-            <article className='right-controls'>
-              <input 
-                onChange={this.checkInput} 
-                className='card-input' 
-                value={this.state.inputBox}
-                type='text' 
-                placeholder='ex: .reduce()'>
-              </input>
-              <button onClick={this.getSubmitFunction}
-              className='submit-answer'>Submit answer</button>
-              <p className = 'answer-text'>{this.state.text}</p>
-            </article>
-            <footer className='footer-container'>
-              <p className="learn-more">
-                <a
-                  href={this.props.card.link}
-                  className='link'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Learn more
-                </a>
-              </p>
-              <p className='number-wrong-text'>Number wrong {this.state.incorrectAnswerCounter}
-              </p>
-            </footer>
-          </section>
+    return (
+      <section className='right-box'>
+        <section className='right-box-cards-container'>
+          <article className='question'>
+            {this.props.card.question}
+          </article>
+          <article className='right-controls'>
+            <input 
+              onChange={this.checkInput} 
+              className='card-input' 
+              value={this.state.inputBox}
+              type='text' 
+              placeholder='ex: .reduce()'>
+            </input>
+            <button onClick={this.getSubmitFunction}
+            className='submit-answer'>Submit answer</button>
+            <p className = 'answer-text'>{this.state.text}</p>
+          </article>
+          <footer className='footer-container'>
+            <p className="learn-more">
+              <a
+                href={this.props.card.link}
+                className='link'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Learn more
+              </a>
+            </p>
+            <p className='number-wrong-text'>Number wrong {this.state.incorrectAnswerCounter}
+            </p>
+          </footer>
         </section>
-      )
+      </section>
+    )
 
-    }
   }
-// }
+}

@@ -1,6 +1,6 @@
 //container for left side of app
 .left-box {
-  background-color: $white;
+  background-color: $hoverTextColorAndCardBackground;
   font-family: $primary;
   font-size: 1.3em;
   margin-top: 10em;
@@ -35,7 +35,7 @@
 //method buttons
 .button {
   @include button-rules;
-  background-color: $lavender;
+  background-color: $background;
   border: 1px solid $primaryBorderColor;
   cursor: pointer;
   border-radius: .5em;
@@ -50,7 +50,7 @@
 
 .active-button {
   background-color: $primaryHoverColor;
-  color: $white;
+  color: $hoverTextColorAndCardBackground;
 }
 
 //creates line under method buttons on left of page
@@ -88,6 +88,7 @@ hr {
   .button-container {
     display: flex;
     flex-direction: column;
+    padding-left: 2em;
     width: 100%;
   }
 

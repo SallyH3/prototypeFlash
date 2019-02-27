@@ -52,8 +52,8 @@ checkReturnCard = () => {
   if(!currentCard) {
     return <div></div>
   } else {
-  return (
-    <Card 
+    return (
+      <Card 
         card={currentCard}
         randomizer={this.randomizer}
       />)
@@ -68,8 +68,6 @@ checkReturnCard = () => {
           mutator={this.setCards}
           iteration={this.setCards}
           accessor={this.setCards}
-          //not sure if this is working below
-          saveAnswers={this.props.correct}
           activeButton={this.state.activeButton}
         />
         {this.checkReturnCard()}

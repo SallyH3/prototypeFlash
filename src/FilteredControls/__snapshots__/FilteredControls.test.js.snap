@@ -12,7 +12,7 @@ exports[`FilteredControls should match snapshot 1`] = `
   <p
     className="left-subtitle"
   >
-    ...click on a method below and your card will display on the right!
+    ...click on a method below and your card will display!
   </p>
   <article
     className="button-container"
