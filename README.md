@@ -45,7 +45,7 @@ Provide a simple UI and seamless, empathetic UX.
 
 * Craft code with clean style by using modular components.
 * Iterate over large dataset to provide a user with the ability to study prototype methods.
-* Give user ability to open and close each flashcard. 
+* Give user ability to keep track of how many prototype questions they have answered wrong. 
 
 ---
 
