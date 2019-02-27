@@ -61,7 +61,7 @@ Provide a simple UI and seamless, empathetic UX.
 ### Desktop view:
 ---
 
-<img width="1277" alt="screen shot 2019-02-26 at 5 18 30 pm" src="https://user-images.githubusercontent.com/40863560/53456184-9a938380-39ea-11e9-8494-6917634f3041.png">
+<img width="1245" alt="screen shot 2019-02-26 at 8 00 11 pm" src="https://user-images.githubusercontent.com/40863560/53462491-257f7880-3a01-11e9-8858-5f2d2eef6a40.png">
 
 
 ---
@@ -69,7 +69,7 @@ Provide a simple UI and seamless, empathetic UX.
 ### Mobile view(320px):
 ---
 
-![screencapture-localhost-3000-2019-02-26-18_53_02](https://user-images.githubusercontent.com/40863560/53460632-0251ca80-39fb-11e9-9c3a-2326c95c3b04.png)
+![mobile](https://user-images.githubusercontent.com/40863560/53462415-e9e4ae80-3a00-11e9-9658-42b5fa1e5883.png)
 
 
 #### Challenges:
