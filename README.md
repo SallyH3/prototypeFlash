@@ -35,7 +35,7 @@ npm test
 ---
 
 #### Abstract:
-For my final project in mod2 at Turing School of Sotware & Design, I created a flashcard app for users to study prototype methods. 
+For my final solo project in mod2 at Turing School of Sotware & Design, I created a flashcard app for users to study prototype methods. 
 
 ---
 
@@ -74,7 +74,7 @@ Provide a simple UI and seamless, empathetic UX.
 
 #### Challenges:
  
- I found it challenging to test some methods inside of my components using Jest and Enzyme. 
+I found it challenging to test some methods inside of my components using Jest and Enzyme. Due to time constraints, I had to pivot from my original idea in my wireframe of the scroll bar so, instead it has become a future iteration.
 
 ---
 
