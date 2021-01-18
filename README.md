@@ -4,7 +4,7 @@
 
 #### Author:
 
-Sally Haefling
+Sally H
 
 
 #### Built with:
