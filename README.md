@@ -4,7 +4,7 @@
 
 #### Author:
 
-Sally H
+Sally Skarr
 
 
 #### Built with:
